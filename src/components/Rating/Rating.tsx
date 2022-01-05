@@ -16,55 +16,13 @@ export default function Rating(props: RatingPropsType) {
     )
 }
 
-// export function UnRating() {
-//
-//     let [value, setValue] = useState(0)
-//
-//     let divStyle = {
-//         display: 'inline-block',
-//         marginLeft: '3px'
-//     }
-//
-//     return (
-//         <div>
-//             <div style={divStyle} onClick={() => {
-//                 setValue(1)
-//             }}>
-//                 <Star selected={value > 0}/>
-//             </div>
-//             <div style={divStyle} onClick={() => {
-//                 setValue(2)
-//             }}>
-//                 <Star selected={value > 1}/>
-//             </div>
-//             <div style={divStyle} onClick={() => {
-//                 setValue(3)
-//             }}>
-//                 <Star selected={value > 2}/>
-//             </div>
-//             <div style={divStyle} onClick={() => {
-//                 setValue(4)
-//             }}>
-//                 <Star selected={value > 3}/>
-//             </div>
-//             <div style={divStyle} onClick={() => {
-//                 setValue(5)
-//             }}>
-//                 <Star selected={value > 4}/>
-//             </div>
-//
-//         </div>
-//
-//     )
-// }
-
-type StarPropsType = {
+export type StarPropsType = {
     selected: boolean,
     value: number,
     onClick: (value: number) => void
 }
 
-function Star(props: StarPropsType) {
+export function Star(props: StarPropsType) {
     return <span onClick={() => props.onClick(props.value)}>{props.selected ? <b>star </b> : 'star '}</span>
 
 }

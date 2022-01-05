@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {mult, sum} from "./hello-test-01/01";
 
-sum(1, 2);
-mult(2, 3)
 
 ReactDOM.render(
     <React.StrictMode>

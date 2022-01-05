@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
 import Rating from "./components/Rating/Rating";
-import Accordion, {UnAccordion} from "./components/Accordion/Accordion";
-import {OnOff} from "./OnOff/OnOff";
+import Accordion from "./components/Accordion/Accordion";
+import {OnOff} from "./components/OnOff/OnOff";
+import {UnAccordion} from "./components/UnAccordion/UnAccordion";
 
 export type TodoListArrayType = {
     id: number,
@@ -30,6 +31,7 @@ function App() {
     let [ratingValue, setRatingValue] = useState<number>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
+
     return (
         <div className={'App'}>
 
