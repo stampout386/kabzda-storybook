@@ -4,7 +4,7 @@ import Rating from "./Rating";
 
 
 export default {
-    title: 'Rating stories',
+    title: 'components/Rating stories',
     component: Rating,
 }
 

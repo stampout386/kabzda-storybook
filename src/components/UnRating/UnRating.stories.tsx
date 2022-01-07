@@ -3,7 +3,7 @@ import {UnRating} from "./UnRating";
 
 
 export default {
-    title: 'UnRating stories',
+    title: 'UnComponents/UnRating stories',
     component: UnRating,
 }
 

@@ -4,7 +4,7 @@ import {AccordionBody, AccordionTitle} from "../Accordion/Accordion";
 type UnAccordionPropsType = {
     title: string
     value: object
-    onChange:()=>void
+    onChange?:()=>void
 }
 
 export function UnAccordion(props:UnAccordionPropsType) {

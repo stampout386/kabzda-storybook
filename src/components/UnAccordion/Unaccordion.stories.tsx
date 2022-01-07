@@ -3,7 +3,7 @@ import {action} from "@storybook/addon-actions";
 
 
 export default {
-    title: 'UnAccordionstories',
+    title: 'UnComponents/UnAccordionstories',
     component: UnAccordion,
 }
 
