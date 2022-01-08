@@ -4,7 +4,7 @@ import {AccordionBody, AccordionTitle} from "../Accordion/Accordion";
 type UnAccordionPropsType = {
     title: string
     value: object
-    onChange:()=>void
+    onChange: () => void
 }
 
 export function UnAccordion(props:UnAccordionPropsType) {
@@ -23,11 +23,11 @@ export function UnAccordion(props:UnAccordionPropsType) {
 
     return (
         <div>
-            <div onClick={() => {
-                setCollapsed(collapsedState)
-            }}>
-                <AccordionTitle title={props.title}/></div>
-            {!collapsed && <AccordionBody value={props.value}/>}
+            {/*<div onClick={() => {*/}
+            {/*    setCollapsed(collapsedState)*/}
+            {/*}}>*/}
+            {/*    <AccordionTitle title={props.title}/></div>*/}
+            {/*{!collapsed && <AccordionBody value={props.value}/>}*/}
         </div>
 
     );

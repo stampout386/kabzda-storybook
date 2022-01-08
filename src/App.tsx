@@ -4,6 +4,7 @@ import Rating from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UnAccordion} from "./components/UnAccordion/UnAccordion";
+import {Select} from "./components/Select/Select";
 
 export type TodoListArrayType = {
     id: number,
@@ -32,20 +33,21 @@ function App() {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
 
+    let [selectValue, setSelectValue] = useState(1)
+
+    const itemClick = (value: any) => {
+        setSelectValue(value)
+    }
+
     return (
         <div className={'App'}>
-
-            <Accordion title={'Menu'} collapsed={accordionCollapsed} value={[10, 9, 8, 7, 'six', 6, 5]}
-                       onChange={() => {
-                           setAccordionCollapsed(!accordionCollapsed)
-                       }}/>
-            {/*<Accordion title={'Settings'} value={[10, 9, 8, 7, 'six', 6, 5]} collapsed={true}/>*/}
             <OnOff on={switchOn} onChange={setSwitchOn}/>
-            <UnAccordion title={'Menu'} value={['Home', 'About', 'Product', 'Blog', 'Contact']}/>
-            <UnAccordion title={'Settings'} value={['Video', 'Audio', 'Game', 'Options']}/>
-
-            {/*<UnRating/>*/}
             <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Select value={selectValue} items={[{title: 'Minsk', value: 1}, {title: 'Kiev', value: 2}, {
+                title: 'Warshava',
+                value: 3
+            }, {title: 'Vilnius', value: 4}]} itemClick={itemClick}/>
+
         </div>
     );
 }

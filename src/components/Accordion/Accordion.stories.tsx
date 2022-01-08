@@ -8,16 +8,27 @@ export default {
     component: Accordion,
 }
 
+const onClick = action('some item was clicked')
 
 export const UncollapsedMode = () => <Accordion title={'Some Items'}
-                                                value={['item 1', 'item 2', 'item 3', 'item 4', 'item 5']}
-                                                onChange={action('collapsed true or false')} collapsed={false}/>
+                                                items={[{title: 'Mik', value: 1}, {
+                                                    title: 'Nick',
+                                                    value: 2
+                                                }, {title: 'Victor', value: 3}, {title: 'Valera', value: 4}]}
+                                                onChange={action('collapsed true or false')} collapsed={false}
+                                                onClick={onClick}/>
 export const CollapsedMode = () => <Accordion title={'Some Items'}
-                                              value={['item 1', 'item 2', 'item 3', 'item 4', 'item 5']}
+                                              items={[{title: 'Mik', value: 1}, {
+                                                  title: 'Nick',
+                                                  value: 2
+                                              }, {title: 'Victor', value: 3}, {title: 'Valera', value: 4}]}
                                               onChange={action('collapsed true or false')}
-                                              collapsed={true}/>
+                                              collapsed={true} onClick={onClick}/>
 export const ChangeMode = () => {
     let [collapsed, setCollapsed] = useState<boolean>(true)
-    return <Accordion title={'Some Items'} value={['item 1', 'item 2', 'item 3', 'item 4', 'item 5']}
-                      collapsed={collapsed} onChange={() => setCollapsed(!collapsed)}/>
+    return <Accordion title={'Some Items'} items={[{title: 'Mik', value: 1}, {title: 'Nick', value: 2}, {
+        title: 'Victor',
+        value: 3
+    }, {title: 'Valera', value: 4}]}
+                      collapsed={collapsed} onChange={() => setCollapsed(!collapsed)} onClick={onClick}/>
 }
