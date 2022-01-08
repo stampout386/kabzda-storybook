@@ -4,7 +4,7 @@ import {action} from "@storybook/addon-actions";
 
 
 export default {
-    title: 'components/OnOff stories',
+    title: 'Components/OnOff stories',
     component: OnOff,
 }
 
