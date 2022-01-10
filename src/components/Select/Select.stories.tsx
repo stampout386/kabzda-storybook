@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {action} from "@storybook/addon-actions";
 import {Select} from "./Select";
 
 
@@ -8,16 +7,32 @@ export default {
     component: Select,
 }
 
-export const ChangeMode = () => {
+export const WithValue = () => {
     let [selectValue, setSelectValue] = useState(1)
 
     const itemClick = (value: any) => {
         setSelectValue(value)
     }
-
-
-    return <Select value={selectValue} items={[{title: 'Minsk', value: 1}, {title: 'Kiev', value: 2}, {
+    const dataArray = [{title: 'Minsk', value: 1}, {title: 'Kiev', value: 2}, {
         title: 'Warshava',
         value: 3
-    }, {title: 'Vilnius', value: 4}]} itemClick={itemClick}/>
+    }, {title: 'Vilnius', value: 4}]
+
+
+    return <Select value={selectValue} items={dataArray} itemClick={itemClick}/>
+}
+
+export const WithoutValue = () => {
+    let [selectValue, setSelectValue] = useState(null)
+
+    const itemClick = (value: any) => {
+        setSelectValue(value)
+    }
+
+    const dataArray = [{title: 'Minsk', value: 1}, {title: 'Kiev', value: 2}, {
+        title: 'Warshava',
+        value: 3
+    }, {title: 'Vilnius', value: 4}]
+
+    return <Select value={selectValue} items={dataArray} itemClick={itemClick}/>
 }
