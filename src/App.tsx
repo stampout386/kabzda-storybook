@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useRef, useState} from 'react';
 import './App.css';
 import Rating from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UnAccordion} from "./components/UnAccordion/UnAccordion";
 import {Select} from "./components/Select/Select";
+import {Example1} from "./stories/ReactMemo.stories";
 
 export type TodoListArrayType = {
     id: number,
@@ -41,12 +42,14 @@ function App() {
 
     return (
         <div className={'App'}>
-            <OnOff on={switchOn} onChange={setSwitchOn}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Select value={selectValue} items={[{title: 'Minsk', value: 1}, {title: 'Kiev', value: 2}, {
-                title: 'Warshava',
-                value: 3
-            }, {title: 'Vilnius', value: 4}]} itemClick={itemClick}/>
+            {/*<TehTask/>*/}
+            <Example1/>
+            {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            {/*<Select value={selectValue} items={[{title: 'Minsk', value: 1}, {title: 'Kiev', value: 2}, {*/}
+            {/*    title: 'Warshava',*/}
+            {/*    value: 3*/}
+            {/*}, {title: 'Vilnius', value: 4}]} itemClick={itemClick}/>*/}
 
         </div>
     );
@@ -54,6 +57,44 @@ function App() {
 
 type PageTitlePropsType = {
     title: string,
+}
+
+const users = [{id: 1, name: 'Александр'}, {id: 2, name: 'Михаил'}, {id: 3, name: 'Володя'}]
+
+const TehTask = () => {
+
+
+    let [value, setValue] = useState('')
+    let [usersValue, setUsersValue] = useState(users)
+
+    const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+        setValue(e.currentTarget.value)
+        let newValue = usersValue.filter(item => item.name.toUpperCase().includes(value.toUpperCase()))
+        setUsersValue(newValue)
+        if (usersValue.length === 0) {
+            setUsersValue(users)
+        } else {
+            return undefined
+        }
+        console.log(usersValue.length)
+    }
+    let userRef = useRef(users)
+    console.log(userRef)
+
+    const onClickButton = () => {
+        console.log(usersValue)
+        let newValue = usersValue.filter(item => item.name.toUpperCase().includes(value.toUpperCase()))
+        setUsersValue(newValue)
+
+    }
+    let usersArray = usersValue.map(item => <li key={item.id + 1}>{item.name}</li>)
+    return (
+        <div>
+            <input value={value} type="text" onChange={onChangeInput}/>
+            <button onClick={onClickButton}>Click</button>
+            <div>{usersArray}</div>
+        </div>
+    )
 }
 
 function PageTitle(props: PageTitlePropsType) {
