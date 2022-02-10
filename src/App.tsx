@@ -8,7 +8,7 @@ import {Select} from "./components/Select/Select";
 import {Example1} from "./stories/ReactMemo.stories";
 import {LikeUseCallback} from "./stories/UseMemoUseCallback.stories";
 import {Example11} from "./stories/UseState.stories";
-import {SimpleExample} from "./stories/UseEffect.stories";
+import {Clock, SetTimeoutExample, SimpleExample} from "./stories/UseEffect.stories";
 
 export type TodoListArrayType = {
     id: number,
@@ -47,7 +47,9 @@ function App() {
         <div className={'App'}>
             {/*<TehTask/>*/}
             {/*<LikeUseCallback/>*/}
-            <SimpleExample/>
+            <Clock/>
+            {/*<SetTimeoutExample/>*/}
+            {/*<SimpleExample/>*/}
             {/*<Example11/>*/}
             {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
             {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
