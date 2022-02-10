@@ -6,6 +6,7 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {UnAccordion} from "./components/UnAccordion/UnAccordion";
 import {Select} from "./components/Select/Select";
 import {Example1} from "./stories/ReactMemo.stories";
+import {LikeUseCallback} from "./stories/UseMemoUseCallback.stories";
 
 export type TodoListArrayType = {
     id: number,
@@ -43,7 +44,8 @@ function App() {
     return (
         <div className={'App'}>
             {/*<TehTask/>*/}
-            <Example1/>
+            <LikeUseCallback/>
+            {/*<Example1/>*/}
             {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
             {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
             {/*<Select value={selectValue} items={[{title: 'Minsk', value: 1}, {title: 'Kiev', value: 2}, {*/}
